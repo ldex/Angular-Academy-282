@@ -19,7 +19,7 @@ export class ProductService {
     return this
             .products$
             .pipe(
-              map(products => products.find(product => product.id == id))
+              map(products => products.find(product => product.id === id))
             )
    }
 

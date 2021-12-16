@@ -18,12 +18,12 @@ export class ProductDetailComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    const id = this.activatedRoute.snapshot.params.id;
+    const id = + this.activatedRoute.snapshot.params.id;
     this
       .productService
       .getProductById(id)
       .subscribe(
-        data => this.product = data
+        result => this.product = result
       )
   }
 
