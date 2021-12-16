@@ -15,7 +15,11 @@ export class ProductService {
     this.initProducts();
    }
 
-   insertProduct(newProduct: Product): Observable<Product> {
+   deleteProduct(id: number | undefined): Observable<any> {
+    return this.http.delete(this.baseUrl + id);
+  }
+
+  insertProduct(newProduct: Product): Observable<Product> {
     return this.http.post<Product>(this.baseUrl, newProduct);
   }
 
